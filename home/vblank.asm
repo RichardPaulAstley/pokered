@@ -35,6 +35,7 @@ VBlank::
 	; VBlank-sensitive operations end.
 
 	call Random
+	call DVRandom
 
 	ld a, [H_VBLANKOCCURRED]
 	and a
@@ -102,4 +103,23 @@ NOT_VBLANKED EQU 1
 	ld a, [H_VBLANKOCCURRED]
 	and a
 	jr nz, .halt
+	ret
+	
+DVRandom::
+	ld a, [wDVRandom1]
+	call _DVRandom
+	ld [wDVRandom1], a
+	ld a, [wDVRandom2]
+	call _DVRandom
+	ld [wDVRandom2], a
+	ret
+
+_DVRandom::
+	push bc
+	ld b, a
+	sla a
+	sla a
+	add b
+	inc a
+	pop bc
 	ret
