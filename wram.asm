@@ -3219,6 +3219,9 @@ wBoxMonNicksEnd:: ; dee2
 
 wBoxDataEnd::
 
+wDVRandom1:: ds 1
+wDVRandom2:: ds 1
+
 
 SECTION "Stack", WRAMX[$df00], BANK[1]
 	ds $ff
