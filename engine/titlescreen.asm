@@ -231,6 +231,11 @@ ENDC
 	jr .awaitUserInterruptionLoop
 
 .finishedWaiting
+	call Random
+	ld [wDVRandom1], a
+	call Random
+	ld [wDVRandom2], a
+
 	ld a, [wTitleMonSpecies]
 	call PlayCry
 	call WaitForSoundToFinish
