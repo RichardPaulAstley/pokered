@@ -110,6 +110,7 @@ DVRandom::
 	call _DVRandom
 	ld [wDVRandom1], a
 	ld a, [wDVRandom2]
+	call _DVRandom
 	ld b, a
 	ld a, [hRandomSub]
 	add b
