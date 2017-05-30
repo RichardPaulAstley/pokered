@@ -6218,9 +6218,9 @@ LoadEnemyMonData:
 	ld b, $88
 	jr z, .storeDVs
 ; random DVs for wild mon
-	ld a, [wDVRandom1]
+	ld a, $aa
 	ld b, a
-	ld a, [wDVRandom2]
+	ld a, $fa
 .storeDVs
 	ld hl, wEnemyMonDVs
 	ld [hli], a
